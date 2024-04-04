@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>range.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,29 +29,29 @@
 
 <div id="main">
     
+    <h1 class="page-title">range.js</h1>
+    
 
     
 
 
 
     
-
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><p>Small Repo to demonstrate a few common utilities the come up while writing JS applications often.</p></article>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Generate a range of integers
+ * @param min - The inclusive minimum value
+ * @param max - The inclusive maximum value
+ * @returns {number[]} a list of integers from min to max
+ */
+export function range (min, max) {
+  const length = max - min;
+  return [...Array.of(length).keys()].map(i => i + min);
+}
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

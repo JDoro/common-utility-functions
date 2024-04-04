@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>withArgs.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,29 +29,29 @@
 
 <div id="main">
     
+    <h1 class="page-title">withArgs.js</h1>
+    
 
     
 
 
 
     
-
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><p>Small Repo to demonstrate a few common utilities the come up while writing JS applications often.</p></article>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Returns a function that takes a function and calls it with the provided arguments
+ * @param args - The arguments to be passed to the second function
+ * @returns {function(*): *} a new function that takes a function and calls it with the provided arguments
+ */
+function withArgs(...args) {
+    return function(func) {
+        return func(...args);
+    }
+}
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

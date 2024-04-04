@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>unary.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,29 +29,29 @@
 
 <div id="main">
     
+    <h1 class="page-title">unary.js</h1>
+    
 
     
 
 
 
     
-
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><p>Small Repo to demonstrate a few common utilities the come up while writing JS applications often.</p></article>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Takes a function that accepts multiple arguments and returns a new function that only accepts one argument.
+ * @param fn - The function to convert to unary
+ * @returns {function(x):x} a new function that only accepts one argument}
+ */
+function unary(fn) {
+  return function(a) {
+    return fn(a);
+  };
+}
+</code></pre>
+        </article>
     </section>
-
-
 
 
 
