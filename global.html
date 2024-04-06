@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#groupBy">groupBy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#range">range</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#toMap">toMap</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#unary">unary</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#withArgs">withArgs</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#groupBy">groupBy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#pickProperties">pickProperties</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#range">range</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#toMap">toMap</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#unary">unary</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#withArgs">withArgs</a></span></li>
 </nav>
 
 <div id="main">
@@ -299,6 +299,188 @@
 
     
 
+    <h4 class="name" id="pickProperties"><span class="type-signature"></span>pickProperties<span class="signature">(obj, properties)</span><span class="type-signature"> &rarr; {Object.&lt;string, object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This function returns a new object with only the properties specified in the properties array
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="someProperties.js.html">someProperties.js</a>, <a href="someProperties.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object.&lt;string, object></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>properties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;string></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object.&lt;string, object></code></span>
+
+
+    </dd>
+</dl>
+
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
     <h4 class="name" id="range"><span class="type-signature"></span>range<span class="signature">(min, max)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
 
     
@@ -482,7 +664,9 @@
 
 
 <div class="description">
-    Convert an array to a key-value map using a string key
+    Convert an array to a key-value map using a string key. The inner function of the `array.reduce` method mutates the
+ accumulator object (`acc`) instad of using immutability, `{...acc, [curr[key]]: curr}` because this is inefficient
+ space-wise. The spread operator creates a new object every time it is called, which is inefficient for large arrays.
 </div>
 
 
@@ -518,7 +702,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="toMap.js.html">toMap.js</a>, <a href="toMap.js.html#line7">line 7</a>
+        <a href="toMap.js.html">toMap.js</a>, <a href="toMap.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -579,7 +763,7 @@
             
 
             <td class="description last">
-                
+                The array to convert to a map
                 
             </td>
         </tr>
@@ -605,7 +789,7 @@
             
 
             <td class="description last">
-                
+                The name of the property used as the key
                 
             </td>
         </tr>
@@ -644,6 +828,10 @@
     </dd>
 </dl>
 
+
+<div class="param-desc">
+    - a new object literal with the key-value pairs
+</div>
 
     
 </div>
@@ -991,7 +1179,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Apr 04 2024 02:29:49 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sat Apr 06 2024 15:47:14 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

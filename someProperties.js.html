@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>unary.js - Documentation</title>
+    <title>someProperties.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">unary.js</h1>
+    <h1 class="page-title">someProperties.js</h1>
     
 
     
@@ -40,14 +40,18 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Takes a function that accepts multiple arguments and returns a new function that only accepts one argument.
- * @param fn - The function to convert to unary
- * @returns {function(x):x} a new function that only accepts one argument}
+ * This function returns a new object with only the properties specified in the properties array
+ * @param {Object.&lt;string, object>} obj
+ * @param properties {Array.&lt;string>}
+ * @returns {Object.&lt;string, object>}
  */
-function unary(fn) {
-  return function(a) {
-    return fn(a);
-  };
+export function pickProperties(obj, properties) {
+  return properties.reduce((acc, property) => {
+    if (obj.hasOwnProperty(property)) {
+      acc[property] = obj[property];
+    }
+    return acc;
+  }, {});
 }
 </code></pre>
         </article>
