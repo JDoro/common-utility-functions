@@ -1,7 +1,7 @@
 /**
  * Generate a range of integers
- * @param min - The inclusive minimum value
- * @param max - The inclusive maximum value
+ * @param {number} min - The inclusive minimum value
+ * @param {number} max - The inclusive maximum value
  * @returns {number[]} a list of integers from min to max
  */
 export function range (min, max) {
