@@ -1,5 +1,4 @@
-import { pickProperties } from '../pick-properties/pick-properties';
-import { deepEquals } from '../deep-equals/deep-equals';
+import { deepEquals, pickProperties } from '../';
 
 export function propertiesEqual<
   K extends string,

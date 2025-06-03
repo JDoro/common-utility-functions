@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint"
+    "lint": "eslint",
+    "dbuild:docs": "typedoc ./src/index.ts"
   },
   "keywords": [],
   "author": "",
