@@ -27,7 +27,6 @@
  * // Wrapping multiple times
  * wrapSlice(numbers, 0, 9); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
  * ```
- * @throws Will produce unexpected results if the array is empty
  * @since 1.0.0
  */
 export function wrapSlice<T>(arr: T[], startIndex: number, endIndex: number): T[] {
