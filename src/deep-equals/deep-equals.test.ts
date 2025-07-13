@@ -25,5 +25,19 @@ describe('deepEquals', () => {
     expect(deepEquals(null, {})).toBe(false);
     expect(deepEquals({}, null)).toBe(false);
   });
+
+  it('returns true for equal arrays', () => {
+    expect(deepEquals([1, 2, 3], [1, 2, 3])).toBe(true);
+    expect(deepEquals([], [])).toBe(true);
+  });
+
+  it('returns false for different arrays', () => {
+    expect(deepEquals([1, 2, 3], [1, 2, 4])).toBe(false);
+    expect(deepEquals([1, 2], [1, 2, 3])).toBe(false);
+  });
+
+  it('returns true for deeply nested arrays and objects', () => {
+    expect(deepEquals([{ a: 1 }, { b: [2, 3] }], [{ a: 1 }, { b: [2, 3] }])).toBe(true);
+  });
 });
 

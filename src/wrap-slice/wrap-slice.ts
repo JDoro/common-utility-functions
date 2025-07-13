@@ -30,6 +30,11 @@
  * @since 1.0.0
  */
 export function wrapSlice<T>(arr: T[], startIndex: number, endIndex: number): T[] {
+  // Return empty array if the input array is empty
+  if (arr.length === 0) {
+    return [];
+  }
+  
   const result: T[] = [];
   for (let x = startIndex; x < endIndex + 1; x++) {
     const normalizedIndex = x % arr.length;

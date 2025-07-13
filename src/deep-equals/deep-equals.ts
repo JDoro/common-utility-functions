@@ -30,9 +30,9 @@
  * ```
  * @since 1.0.0
  */
-export function deepEquals<T extends { [k: string]: unknown }>(
-  obj1: T | string | number | undefined | null,
-  obj2: T | string | number | undefined | null,
+export function deepEquals(
+  obj1: unknown,
+  obj2: unknown,
 ): boolean {
   if (obj1 === obj2) {
     return true;
@@ -51,8 +51,8 @@ export function deepEquals<T extends { [k: string]: unknown }>(
     return false;
   }
   return Object.keys(obj1).every(
-    (key: keyof T) =>
+    (key) =>
       Object.prototype.hasOwnProperty.call(obj2, key) &&
-      deepEquals(obj1[key] as { [k: string]: unknown }, obj2[key] as { [k: string]: unknown }),
+      deepEquals((obj1 as Record<string, unknown>)[key], (obj2 as Record<string, unknown>)[key]),
   );
 }
