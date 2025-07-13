@@ -17,5 +17,10 @@ describe('wrapSlice', () => {
   it('returns empty array if startIndex > endIndex', () => {
     expect(wrapSlice([1, 2, 3], 3, 2)).toEqual([]);
   });
+
+  it('returns empty array for empty input array', () => {
+    expect(wrapSlice([], 0, 2)).toEqual([]);
+    expect(wrapSlice([], -1, 1)).toEqual([]);
+  });
 });
 
