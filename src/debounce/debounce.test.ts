@@ -45,4 +45,45 @@ describe('debounce', () => {
 
     expect(func).toHaveBeenCalledTimes(1);
   });
+
+  it('should call the function immediately with zero delay', () => {
+    const func = jest.fn();
+    const debouncedFunc = debounce(func, 0);
+
+    debouncedFunc();
+
+    expect(func).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(0);
+
+    expect(func).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle negative delay values by treating them as zero', () => {
+    const func = jest.fn();
+    const debouncedFunc = debounce(func, -100);
+
+    debouncedFunc();
+
+    expect(func).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(0);
+
+    expect(func).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle errors thrown by the debounced function', () => {
+    const errorFunc = jest.fn(() => {
+      throw new Error('Test error');
+    });
+    const debouncedFunc = debounce(errorFunc, 500);
+
+    debouncedFunc();
+
+    expect(() => {
+      jest.advanceTimersByTime(500);
+    }).toThrow('Test error');
+
+    expect(errorFunc).toHaveBeenCalledTimes(1);
+  });
 });
