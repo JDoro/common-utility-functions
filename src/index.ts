@@ -1,4 +1,5 @@
 export * from './constant';
+export * from './debounce';
 export * from './deep-equals';
 export * from './filter-string-array';
 export * from './get-prop';
