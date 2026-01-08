@@ -7,6 +7,7 @@ export * from './group-by';
 export * from './pick-properties';
 export * from './properties-equal';
 export * from './range';
+export * from './throttle';
 export * from './to-map';
 export * from './unary';
 export * from './with-args';
