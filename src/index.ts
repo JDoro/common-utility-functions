@@ -4,6 +4,7 @@ export * from './deep-equals';
 export * from './filter-string-array';
 export * from './get-prop';
 export * from './group-by';
+export * from './memoize';
 export * from './pick-properties';
 export * from './properties-equal';
 export * from './range';
